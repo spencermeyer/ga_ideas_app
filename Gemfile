@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'omniauth'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'foundation-rails'
 
 
 
