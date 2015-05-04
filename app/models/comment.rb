@@ -12,6 +12,5 @@ class Comment < ActiveRecord::Base
 
   # NOTE: Comments belong to a user
   belongs_to :user
-  belongs_to :idea
 
 end
