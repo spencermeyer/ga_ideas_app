@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-root 'somethings#index'
+  devise_for :users
+  resources :ideas
+  root 'somethings#index'
 end
