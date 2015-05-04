@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  acts_as_voter
 
   validates :first_name,
      presence: true,
@@ -29,3 +30,4 @@ class User < ActiveRecord::Base
      presence: true,
      length: { in: 2..30 }
 end
+
