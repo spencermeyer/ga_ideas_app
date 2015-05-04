@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_commentable (4.0.2)
     acts_as_votable (0.10.0)
     arel (6.0.0)
     bcrypt (3.1.10)
@@ -62,6 +63,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.5.2)
+    foundation-rails (5.5.2.1)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     haml (4.0.6)
@@ -180,11 +184,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_commentable
   acts_as_votable (~> 0.10.0)
   byebug
   coffee-rails (~> 4.1.0)
   devise
+<<<<<<< HEAD
   haml-rails
+=======
+  foundation-rails
+>>>>>>> a9abf7e1a8dc8c9ecb3d66ec064a0b02b8d39863
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
