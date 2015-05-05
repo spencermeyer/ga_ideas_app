@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   
   resources :ideas
 
-  root 'users#index'
+  root 'ideas#index'
 end
