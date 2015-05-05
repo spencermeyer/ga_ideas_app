@@ -1,0 +1,8 @@
+%h1
+  WE ARE AWESOME NINJAS!
+%h2
+  \...now get back to WORK!
+%ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
+- @ideas.each do |idea|
+  %li
+    = link_to "#{idea.title}", idea
