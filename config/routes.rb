@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :ideas do
     member do
-      put "like", to: “ideas#upvote"
+      put "like",    to:'ideas#upvote'
+      put "dislike", to:'ideas#downvote'
     end
   end
 
