@@ -4,12 +4,10 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show]
   resources :ideas
 
-  resources :ideas do
+  resources :idea do
     member do
-      put "like", to: “ideas#upvote"
+      put "like", to: 'ideas#upvote'
     end
   end
-
-
 
 end
