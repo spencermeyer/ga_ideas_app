@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   FIELDS = {
     facebook: {
-      name:  [:extra, :raw_info, :name],
+      first_name:  [:extra, :raw_info, :first_name],
       image: [:info, :image]
     }
   }
@@ -21,28 +21,28 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   acts_as_voter
 
-  validates :first_name,
-     presence: true,
-     length: { in: 2..20},
-     format: { with: /\A[a-zA-Z]+\z/, message: "First name should only contain letters" }
-  validates :last_name,
-     presence: true,
-     length: { in: 2..50},
-     format: { with: /\A[a-zA-Z]+\z/, message: "Last name should only contain letters" }
-  validates :dob,
-     presence: true
-  validates :role,
-     presence: true,
-     inclusion: { in: %w(admin user), message: "you have not chosen a valid role" }
-  validates :gender,
-     presence: true,
-     length: { is: 1},
-     inclusion: { in: %w(m f), message: "you have not chosen a valid gender" }
-  validates :nationality,
-     length: { in: 2..30 }
-  validates :location,
-     presence: true,
-     length: { in: 2..30 }
+  # validates :first_name,
+  #    presence: true,
+  #    length: { in: 2..20},
+  #    format: { with: /\A[a-zA-Z]+\z/, message: "First name should only contain letters" }
+  # validates :last_name,
+  #    presence: true,
+  #    length: { in: 2..50},
+  #    format: { with: /\A[a-zA-Z]+\z/, message: "Last name should only contain letters" }
+  # validates :dob,
+  #    presence: true
+  # validates :role,
+  #    presence: true,
+  #    inclusion: { in: %w(admin user), message: "you have not chosen a valid role" }
+  # validates :gender,
+  #    presence: true,
+  #    length: { is: 1},
+  #    inclusion: { in: %w(m f), message: "you have not chosen a valid gender" }
+  # validates :nationality,
+  #    length: { in: 2..30 }
+  # validates :location,
+  #    presence: true,
+  #    length: { in: 2..30 }
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     
@@ -87,9 +87,6 @@ class User < ActiveRecord::Base
             user[key] = a if user[key].nil?
           end
 
-        # If you use confirmable module 
-        # user.skip_confirmation!
-        user.save!
       end
       
       # Set user email and password
