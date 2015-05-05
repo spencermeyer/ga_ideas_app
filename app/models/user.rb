@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :ideas
+  mount_uploader :image, ProfilepictureUploader
   has_many :identities
   has_many :comments
   # Include default devise modules. Others available are:
