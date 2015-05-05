@@ -21,28 +21,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   acts_as_voter
 
-  # validates :first_name,
-  #    presence: true,
-  #    length: { in: 2..20},
-  #    format: { with: /\A[a-zA-Z]+\z/, message: "First name should only contain letters" }
-  # validates :last_name,
-  #    presence: true,
-  #    length: { in: 2..50},
-  #    format: { with: /\A[a-zA-Z]+\z/, message: "Last name should only contain letters" }
-  # validates :dob,
-  #    presence: true
-  # validates :role,
-  #    presence: true,
-  #    inclusion: { in: %w(admin user), message: "you have not chosen a valid role" }
-  # validates :gender,
-  #    presence: true,
-  #    length: { is: 1},
-  #    inclusion: { in: %w(m f), message: "you have not chosen a valid gender" }
-  # validates :nationality,
-  #    length: { in: 2..30 }
-  # validates :location,
-  #    presence: true,
-  #    length: { in: 2..30 }
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     
@@ -78,14 +56,14 @@ class User < ActiveRecord::Base
       if user.nil?
         user = User.new
 
-          # Generic for each provider
-          FIELDS.try(:[], auth.try(:[], :provider).to_sym).each do |key, array|
-            a = auth
-            array.each do |method|
-              a = a.try(:[], method)
-            end
-            user[key] = a if user[key].nil?
+        # Generic for each provider
+        FIELDS.try(:[], auth.try(:[], :provider).to_sym).each do |key, array|
+          a = auth
+          array.each do |method|
+            a = a.try(:[], method)
           end
+          user[key] = a if user[key].nil?
+        end
 
       end
       
