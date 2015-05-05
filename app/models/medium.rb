@@ -6,5 +6,5 @@ validates :title, presence: true, length: { in: 2..50, message: "Title should be
 validates :media_type, presence: true
 validates :content, presence: true
 
-mount_uploader :content, media_uploader
+mount_uploader :content, MediaUploader
 end
