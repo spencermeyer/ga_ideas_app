@@ -1,3 +1,8 @@
+Idea.destroy_all
+User.destroy_all
+Comment.destroy_all
+Medium.destroy_all
+Identity.destroy_all
 
 #TESTING VALIDATIONS FOR IDEA MODEL
 
@@ -19,6 +24,7 @@ comment1 = Comment.create!(title: "fhfhfhffh")
 #TITLE LENGTH FOR COMMENT VALIDATION TESTED SUCCESSFULLY
 
 user1 = User.create!(email: "dani@dani.com", password: "password", first_name: "dani", last_name: "zraykat", dob: "25/01/1989", role: "user", gender: "m", nationality: "russian", location: "london")
-medium1 = Medium.create!(idea_id:1, title: "first_media", content: "content of the fisrt media", media_type: "video")
-identity = Identity.create!(user_id:1, provider: "facebook", uid: "danizraikat")
-comment2 = Comment.create!(user_id:1, title: "aaaaaaaa") 
+medium1 = Medium.create!(idea_id: idea1.id, title: "first_media", content: "content of the fisrt media", media_type: "video")
+
+identity = Identity.create!(user_id: user1.id, provider: "facebook", uid: "danizraikat")
+comment2 = Comment.create!(user_id: user1.id, title: "aaaaaaaa") 
