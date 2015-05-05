@@ -6,6 +6,10 @@ gem 'acts_as_commentable'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'haml-rails'
 gem 'foundation-rails'
+gem 'fog', '1.29.0'
+gem 'carrierwave', '0.10.0'
+gem 'rmagick'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
