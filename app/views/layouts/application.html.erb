@@ -52,18 +52,18 @@
 
         <!-- Left Nav Section -->
         <ul class="left">
-         <!-- <li class="has-form">
+         <li class="has-form">
            <div class="row collapse">
              <div class="large-7 small-7 columns">
-               <#%= search_form_for @q do |f| %>
-               <#%= f.text_field @search_field, placeholder: "Search" %>
+               <%= search_form_for @q do |f| %>
+               <%= f.text_field @search_field, placeholder: "Search" %>
              </div>
              <div class="large-4 small-4 columns">
-               <#%= f.submit class: "alert button expand" %>
+               <%= f.submit class: "alert button expand" %>
              </div>
-             <#% end %>
+             <% end %>
            </div>
-         </li> -->
+         </li>
          <li class="has-dropdown"><%= link_to "Ideas", ideas_path %>
           <ul class="dropdown">
           <!-- <#% if can? :add, @idea %> -->
