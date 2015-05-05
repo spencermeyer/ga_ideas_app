@@ -1,0 +1,39 @@
+%p#notice= notice
+.user-index
+  %p
+    %strong First_Name:
+    = @user.first_name
+  %p
+    %strong Last_Name:
+    = @user.last_name
+  %p
+    %strong Dob:
+    = @user.dob
+  %p
+    %strong Role:
+    = @user.role
+  %p
+    %strong Gender:
+    = @user.gender
+  %p
+    %strong Nationality:
+    = @user.nationality
+  %p
+    %strong Location:
+    = @user.location
+  %p
+    %strong Email:
+    = mail_to(@user.email)
+  %p
+    %strong Age:
+    = distance_of_time_in_words_to_now(@user.dob)
+  %p
+    %strong Gender:
+    = @user.gender.humanize
+  %p
+    %strong Image:
+    = link_to image_tag(@user.image.thumb), @user
+%p.user-show-options
+  = link_to 'Edit', edit_user_registration_path(@user)
+  |
+  \#{link_to 'Back', users_path}

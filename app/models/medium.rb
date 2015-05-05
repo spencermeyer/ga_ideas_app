@@ -6,4 +6,5 @@ class Medium < ActiveRecord::Base
   validates :media_type, presence: true
 
   mount_uploader :content, MediaUploader
+
 end
