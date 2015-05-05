@@ -10,6 +10,31 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+
+  end
+
+
+  def get_payment
+    Stripe.api_key = "sk_test_Z5fLzRW01d29ye1MdrjoaNeM"
+
+    # Get the credit card details submitted by the form
+    token = params[:stripeToken]
+
+    # Create the charge on Stripe's servers - this will charge the user's card
+    begin
+      charge = Stripe::Charge.create(
+        :amount => 1000, # amount in cents, again
+        :currency => "gbp",
+        :source => token,
+        :description => "Example charge"
+        )
+    rescue Stripe::CardError => e
+      # The card has been declined
+    end
+
+    # redirect to idea show page
+    redirect_to "ideas#show"
+
   end
 
   # GET /ideas/new
@@ -71,4 +96,4 @@ class IdeasController < ApplicationController
     def idea_params
       params.require(:idea).permit(:user_id, :title, :genre, :brief, :description)
     end
-end
+  end

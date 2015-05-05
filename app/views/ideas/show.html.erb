@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @idea.user_id %>
+  <%= @idea.user.first_name %>
 </p>
 
 <p>
@@ -27,3 +27,68 @@
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>
+
+<!-- Stripe Form -->
+
+<!-- REPLACE FORM FOR RAILS FORM HELPER -->
+
+<%= form_tag get_payment_ideas_path , id: "payment-form" do |f| %>
+  <span class="payment-errors"></span>
+
+  <div class="form-row">
+    <%= label_tag :card_number %><br />
+    <%= text_field_tag "", nil, data:{stripe: "number"} %>
+  </div>
+
+  <div class="form-row">
+    <%= label_tag :cvc %><br />
+    <%= text_field_tag "", nil, data:{stripe: "cvc"} %>
+  </div>
+
+  <div class="form-row">
+    <%= label_tag :expiration %><br />
+    <%= text_field_tag "", nil, data:{stripe: "exp-month"} %>
+    <%= text_field_tag "", nil, data:{stripe: "exp-year"} %>
+  </div>
+
+  <%= submit_tag :pay %>
+
+<% end %>
+
+
+
+<!-- Stripe.js JQ functionality -->
+<script type="text/javascript">
+  jQuery(function($) {
+    $('#payment-form').submit(function(event) {
+      var $form = $(this);
+
+      // Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+
+      Stripe.card.createToken($form, stripeResponseHandler);
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+  });
+
+  function stripeResponseHandler(status, response) {
+    var $form = $('#payment-form');
+
+    if (response.error) {
+      // Show the errors on the form
+      $form.find('.payment-errors').text(response.error.message);
+      $form.find('button').prop('disabled', false);
+    } else {
+      // response contains id and card, which contains additional card details
+      var token = response.id;
+      debugger
+      // Insert the token into the form so it gets submitted to the server
+      $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+      // and submit
+      $form.get(0).submit();
+    }
+  };
+
+</script>
