@@ -14,11 +14,20 @@
 %p
   %strong Description:
   = @idea.description
+%p
+  %strong Number of Likes
+  =@idea.get_likes(:vote_scope => 'rank').size
+  =@idea.get_upvotes(:vote_scope => 'rank').size
+  =@idea.find_votes_for(:vote_scope => 'rank').size
+
 = link_to 'Edit', edit_idea_path(@idea)
 |
 \#{link_to 'Back', ideas_path}
 
-= link_to 'like idea', like_idea_path(@idea)
+= link_to 'like idea', like_idea_path(@idea), method: :put, class:"button"
+= link_to 'dislike idea', dislike_idea_path(@idea), method: :put, class:"button"
+
+
 
 
 
