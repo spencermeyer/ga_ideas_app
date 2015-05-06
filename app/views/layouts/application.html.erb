@@ -29,13 +29,17 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li><%= image_tag current_user.try(:image).try(:thumb), class: "profile-picture" %></li>
+          <li>
+          <% if current_user.try(:image) %>
+            <%= image_tag current_user.try(:image).try(:thumb).try(:url), class: "profile-picture" %>
+          <% end %>
+          </li>
           <li class="has-dropdown">
             <a href="#">
               <% if current_user %>
-              <%= link_to "#{current_user.first_name}", current_user %>
+                <%= link_to "#{current_user.first_name}", current_user %>
               <% else %>
-              Login/Signup
+                Login/Signup
               <% end %>
             </a>
             <ul class="dropdown">
