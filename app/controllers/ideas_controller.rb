@@ -67,6 +67,18 @@ class IdeasController < ApplicationController
     end
   end
 
+  def upvote
+    @idea = Idea.find(params[:id])
+    @idea.liked_by current_user
+    redirect_to @idea
+  end
+
+  def downvote
+    @idea = Idea.find(params[:id])
+    @idea.disliked_by current_user
+    redirect_to @idea
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
