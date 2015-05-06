@@ -1,8 +1,8 @@
 Idea.destroy_all
-User.destroy_all
 Comment.destroy_all
 Medium.destroy_all
 Identity.destroy_all
+User.destroy_all
 
 #TESTING VALIDATIONS FOR IDEA MODEL
 
