@@ -12,6 +12,7 @@ gem 'carrierwave', '0.10.0'
 gem 'rmagick'
 gem 'cancancan'
 gem 'ransack'
+gem 'active_model_serializers'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
