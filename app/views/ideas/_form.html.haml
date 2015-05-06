@@ -1,0 +1,31 @@
+= form_for(@idea) do |f|
+  - if @idea.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@idea.errors.count, "error")
+        prohibited this idea from being saved:
+      %ul
+        - @idea.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :user_id
+    %br/
+    = f.number_field :user_id
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  .field
+    = f.label :genre
+    %br/
+    = f.text_field :genre
+  .field
+    = f.label :brief
+    %br/
+    = f.text_area :brief
+  .field
+    = f.label :description
+    %br/
+    = f.text_area :description
+  .actions
+    = f.submit
