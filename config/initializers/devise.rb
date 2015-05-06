@@ -231,6 +231,7 @@ Devise.setup do |config|
 
   # ==> OmniAuth
   config.omniauth :facebook, ENV["GA_IDEAS_DEVISE_FACEBOOK_API_KEY"], ENV["GA_IDEAS_DEVISE_FACEBOOK_API_SECRET"]
+  config.omniauth :linkedin, ENV["GA_IDEAS_DEVISE_LINKEDIN_API_KEY"], ENV["GA_IDEAS_DEVISE_LINKEDIN_API_SECRET"]
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'

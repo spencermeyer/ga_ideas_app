@@ -1,6 +1,9 @@
 %p#notice= notice
 .user-index
   %p
+    %strong Image:
+    = link_to image_tag(@user.image.thumb), @user
+  %p
     %strong First_Name:
     = @user.first_name
   %p
@@ -30,9 +33,7 @@
   %p
     %strong Gender:
     = @user.gender.humanize
-  %p
-    %strong Image:
-    = link_to image_tag(@user.image.thumb), @user
+  
 %p.user-show-options
   = link_to 'Edit', edit_user_registration_path(@user)
   |
