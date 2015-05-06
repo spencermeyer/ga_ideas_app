@@ -6,9 +6,6 @@ class Medium < ActiveRecord::Base
   validates :media_type, presence: true
   # validates :content, presence: true
 
-<<<<<<< HEAD
-mount_uploader :content, MediaUploader
-=======
   mount_uploader :content, MediaUploader
->>>>>>> f9b2eb1fdcf82da523a37e87bfda93ea1be2637f
+
 end
