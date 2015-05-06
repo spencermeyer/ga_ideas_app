@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
     facebook: {
       first_name:  [:extra, :raw_info, :first_name],
       image: [:info, :image]
+    },
+    linkedin: {
+      last_name:  [:raw_info, :last_name],
+      image: [:info, :image]
     }
   }
 
