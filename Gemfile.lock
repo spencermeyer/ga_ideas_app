@@ -324,6 +324,7 @@ DEPENDENCIES
   fog (= 1.29.0)
   foundation-rails
   haml-rails
+  html2haml
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
