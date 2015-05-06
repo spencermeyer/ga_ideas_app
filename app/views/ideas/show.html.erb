@@ -1,0 +1,34 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @idea.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @idea.title %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @idea.genre %>
+</p>
+
+<p>
+  <strong>Brief:</strong>
+  <%= @idea.brief %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @idea.description %>
+</p>
+
+<%= render partial: 'comments/form', locals: { commentable: @idea } %>
+<%= render partial: 'comments/comment', collection: @comments, locals: { commentable: @idea } %>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
+

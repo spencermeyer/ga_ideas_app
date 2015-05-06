@@ -16,6 +16,9 @@
   = @idea.description
 
   
+= render partial: 'comments/form', locals: { commentable: @idea }
+= render partial: 'comments/comment', collection: @comments, locals: { commentable: @idea }
+  
 - if can? :add, @idea
   = link_to 'Edit', edit_idea_path(@idea)
   |
