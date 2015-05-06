@@ -9,7 +9,7 @@
           %br/
           %h2= link_to "#{user.first_name}", user
           %br/
-          = user.role.humanize
+          = user.role.try(:humanize)
 
 
 

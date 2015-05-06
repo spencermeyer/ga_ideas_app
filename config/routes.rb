@@ -15,12 +15,12 @@ Rails.application.routes.draw do
   
   resources :media
 
-
   # , only:[:create, :edit, :show, :new, :update]
 
   resources :ideas do
     resources :media
   end
 
+  resources :comments, only:[:create, :destroy]
 
 end
