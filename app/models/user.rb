@@ -1,11 +1,15 @@
 class User < ActiveRecord::Base
   
-  TEMP_EMAIL_PREFIX = 'change@me'
+  TEMP_EMAIL_PREFIX = 'change@me' 
 
   FIELDS = {
     facebook: {
-      first_name:  [:extra, :raw_info, :first_name],
-      image: [:info, :image]
+      first_name:  [:extra, :raw_info, :first_name]
+      # image: [:info, :image]
+    },
+    linkedin: {
+      last_name:  [:raw_info, :last_name],
+      # image: [:info, :image]
     }
   }
 
@@ -46,8 +50,7 @@ class User < ActiveRecord::Base
     def self.create_user(auth)
       # Get the existing user by email if the provider gives us a verified email.
       # If no verified email was provided we assign a temporary email and ask the user to verify it on the next step via UsersController.finish_signup
-      email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
-      email = auth.info.email if email_is_verified
+      email = auth.info.email
 
       # Select a user if they have already registered
       user = User.where(email: email).first if email
@@ -64,7 +67,6 @@ class User < ActiveRecord::Base
           end
           user[key] = a if user[key].nil?
         end
-
       end
       
       # Set user email and password

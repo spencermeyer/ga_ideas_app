@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
-  # GET /ideas
+  # GET /ideas 
   # GET /ideas.json
   def index
     @q = Idea.ransack(params[:q])
