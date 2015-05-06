@@ -14,6 +14,8 @@
 %p
   %strong Description:
   = @idea.description
-= link_to 'Edit', edit_idea_path(@idea)
-|
-\#{link_to 'Back', ideas_path}
+  
+- if can? :add, @idea
+  = link_to 'Edit', edit_idea_path(@idea)
+  |
+  \#{link_to 'Back', ideas_path}
