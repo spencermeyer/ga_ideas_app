@@ -9,6 +9,7 @@ class Ability
         u.id == user.id
     end
     cannot :manage, User
+    cannot :manage, Idea
     end
   end
 end

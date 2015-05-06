@@ -1,0 +1,21 @@
+%p#notice= notice
+%p
+  %strong User:
+  = @idea.user_id
+%p
+  %strong Title:
+  = @idea.title
+%p
+  %strong Genre:
+  = @idea.genre
+%p
+  %strong Brief:
+  = @idea.brief
+%p
+  %strong Description:
+  = @idea.description
+  
+- if can? :add, @idea
+  = link_to 'Edit', edit_idea_path(@idea)
+  |
+  \#{link_to 'Back', ideas_path}
