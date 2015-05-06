@@ -12,11 +12,15 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only:[:create, :destroy]
+  
   resources :media
 
 
   # , only:[:create, :edit, :show, :new, :update]
 
+  resources :ideas do
+    resources :media
+  end
 
 
 end

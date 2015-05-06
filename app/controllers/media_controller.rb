@@ -14,6 +14,7 @@ class MediaController < ApplicationController
 
   # GET /media/new
   def new
+    @idea = Idea.find(params[:idea_id])
     @medium = Medium.new
   end
 
@@ -21,10 +22,11 @@ class MediaController < ApplicationController
   def edit
   end
 
-  # POST /media
+  # POST /ideas/:idea_id/media
   # POST /media.json
   def create
-    @medium = Medium.new(medium_params)
+    @idea = Idea.find(params[:idea_id])
+    @medium = @idea.media.new(medium_params)
 
     respond_to do |format|
       if @medium.save
