@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'omniauth'
-gem 'acts_as_commentable'
+gem 'acts_as_commentable', '4.0.2'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'haml-rails'
 gem 'foundation-rails'
