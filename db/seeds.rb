@@ -23,8 +23,10 @@ idea3 = Idea.create!(user_id: 1, title: "third", genre: "mobile", brief: "hello"
 comment1 = Comment.create!(title: "fhfhfhffh") 
 #TITLE LENGTH FOR COMMENT VALIDATION TESTED SUCCESSFULLY
 
-user1 = User.create!(email: "dani@dani.com", password: "password", first_name: "dani", last_name: "zraykat", dob: "25/01/1989", role: "user", gender: "m", nationality: "russian", location: "london")
 medium1 = Medium.create!(idea_id: idea1.id, title: "first_media", content: "content of the fisrt media", media_type: "video")
 
 identity = Identity.create!(user_id: user1.id, provider: "facebook", uid: "danizraikat")
 comment2 = Comment.create!(user_id: user1.id, title: "aaaaaaaa") 
+
+#SEED USERS
+user1 = User.create!(email: "dani@dani.com", password: "password", first_name: "Dani", last_name: "AL-Zraykat", image: "dob: "25/01/1989", role: "admin", gender: "m", nationality: "russian", location: "london")

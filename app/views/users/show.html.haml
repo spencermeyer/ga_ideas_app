@@ -4,10 +4,10 @@
     %strong Image:
     = link_to image_tag(@user.image.thumb), @user
   %p
-    %strong First_Name:
+    %strong First Name:
     = @user.first_name
   %p
-    %strong Last_Name:
+    %strong Last Name:
     = @user.last_name
   %p
     %strong Dob:
@@ -27,9 +27,6 @@
   %p
     %strong Email:
     = mail_to(@user.email)
-  %p
-    %strong Age:
-    = distance_of_time_in_words_to_now(@user.dob)
   %p
     %strong Gender:
     = @user.gender.humanize

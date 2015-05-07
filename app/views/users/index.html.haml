@@ -1,15 +1,19 @@
 %p#notice= notice
-%h1 Users
-%ul.small-block-grid-2.medium-block-grid-3.large-block-grid-3
-  - @users.each do |user|
-    %li
-      %ul
-        %li.user-index
-          = link_to image_tag(user.image.thumb), user
-          %br/
-          %h2= link_to "#{user.first_name}", user
-          %br/
-          = user.role.try(:humanize)
+
+%div#header-users-index
+  %h1 All Users
+
+%div#main
+  %ul.small-block-grid-2.medium-block-grid-3.large-block-grid-3
+    - @users.each do |user|
+      %li
+        %ul
+          %li.user-index
+            %l.user-image= link_to image_tag(user.image), user
+            
+            %h2= link_to "#{user.first_name} #{user.last_name}", user
+            
+            %li= user.role.try(:humanize)
 
 
 
