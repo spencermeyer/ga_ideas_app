@@ -2,7 +2,7 @@
   width: 100%;
 
   #headerhome {
-    
+
     .homeheader {
       font-family: Impact;
       font-size: 100px;
@@ -27,7 +27,7 @@
   height: 100px;
 }
 .descriptionentry{
-width: 800px;
+  width: 800px;
 }
 .firstnameentry{
   width: 150px;
@@ -90,26 +90,25 @@ width: 800px;
 .mediaformmediatype{
   width: 100px;
 }
-
-
-
-
-
-
-
-
-
+.editusercancel{
+  float: left;
+}
+.passwordentry2{
+  float: none;
+}
+.edituserimagein{
+  float: none;
+}
 
 #main {
   width: 100%;
   
-
   #mainideas {
     .homemain {
       text-align: center;
       font-size: 40px;
+      
     }
-
     .ideas-homepage {
       max-width: 150px;
       margin: auto;
@@ -117,5 +116,13 @@ width: 800px;
       border: 1px solid black;
       text-align: center;
     }
+    .homemain{
+      background-color: rgba(255,255,255,0.3);   
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+      padding: 0px 0px 0px 0px;
+    }
   }
 }
+

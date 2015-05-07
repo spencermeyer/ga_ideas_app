@@ -2,62 +2,65 @@
   Edit #{resource_name.to_s.humanize}
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = devise_error_messages!
-  .field
+  .field.firstnameentry
     = f.label :first_name
     %br/
     = f.text_field :first_name, autofocus: true
-  .field
+  .field.lastnameentry
     = f.label :last_name
     %br/
     = f.text_field :last_name
-  .field
+  .field.dobentry
     = f.label :dob
     %br/
     = f.date_field :dob
-  .field
+  .field.roleentry
     = f.label :role
     %br/
     = f.text_field :role
-  .field
+  .field.genderentry
     = f.label :gender
     %br/
     = f.text_field :gender
-  .field
+  .field.nationalityentry
     = f.label :nationality
     %br/
     = f.text_field :nationality
-  .field
+  .field.locationentry
     = f.label :location
     %br/
     = f.text_field :location
-  .field
+  .field.emailentry
     = f.label :email
+    %i (enter a valid registered email adress eg someone@somewhere.loc)                                                   
     %br/
     = f.text_field :email
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
+  .field.passwordentry
     = f.label :password
     %i (leave blank if you don't want to change it)
     %br/
     = f.password_field :password, autocomplete: "off"
-  .field
+  .field.passwordentry
     = f.label :password_confirmation
+    %i (Please make sure your passwords match)
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
-  .field
+  .field.confirmpasswordentry
     = f.label :current_password
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "off"
-  .field
+  .field.edituserimagein
     = f.label :image
     %br/
     = f.file_field :image
   .actions
     = f.submit "Update"
-%h3 Cancel my account
+    %br/
+%h3.editusercancel Cancel my account
 %p
   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
 = link_to "Back", :back

@@ -10,20 +10,19 @@
     %div#mainideas
       %h3.homemain
         TOP THREE TRENDING IDEAS
-
-      %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
-        - @ideas.each do |idea|
-          %li
-            %ul.ideas-homepage
-              %li
-                = link_to "#{idea.title}", idea
-                %br
-                = idea.brief
-                %br
-                = idea.user.first_name
-                %br
-                = idea.user.last_name
-                %br
-                = idea.brief
-                %br
-                = image_tag idea.media[0].try(:content)
+        %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
+          - @ideas.each do |idea|
+            %li
+              %ul.ideas-homepage
+                %li
+                  = link_to "#{idea.title}", idea
+                  %br
+                  = idea.brief
+                  %br
+                  = idea.user.first_name
+                  %br
+                  = idea.user.last_name
+                  %br
+                  = idea.brief
+                  %br
+                  = image_tag idea.media[0].try(:content)
