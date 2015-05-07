@@ -41,12 +41,12 @@ class IdeasController < ApplicationController
       )
 
     # Create the charge on Stripe's servers - this will charge the user's card
-      Stripe::Charge.create(
-              :amount => 1000, # in cents
-              :currency => "gbp",
-              :customer => customer.id,
-              :description => "Endorsed Idea on GA-Network"
-              )
+    Stripe::Charge.create(
+            :amount => 1000, # in cents
+            :currency => "gbp",
+            :customer => customer.id,
+            :description => "Endorsed Idea on GA-Network"
+            )
 
     # **** USED TO SAVE CUSTOMER AND ADD TO DATABASE AS CUSTOMER_ID ****
     # # Save the customer ID in your database so you can use it later
@@ -136,6 +136,6 @@ class IdeasController < ApplicationController
     def idea_params
       params.require(:idea).permit(:user_id, :title, :genre, :brief, :description)
     end 
-end
+  end
 
 

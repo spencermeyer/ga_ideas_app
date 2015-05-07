@@ -55,24 +55,8 @@
       = text_field_tag "", nil, data:{stripe: "exp-month"}
       \/
       \#{text_field_tag "", nil, data:{stripe: "exp-year"}}
-      = submit_tag :Endorse, class: "button expand"
+      = submit_tag "Give 10£ to Idea", class: "button expand"
 
 = link_to 'Edit', edit_idea_path(@idea)
 
 = link_to 'Back', ideas_path
-
-%script{:type => "text/javascript"}
-  :plain
-    $(function($) {
-      $('#payment-form').submit(function(event) {
-        var $form = $(this);
-
-        // Disable the submit button to prevent repeated clicks
-        $form.find('button').prop('disabled', true);
-
-        Stripe.card.createToken($form, stripeResponseHandler);
-
-        // Prevent the form from submitting with the default action
-        return false;
-      });
-    });
