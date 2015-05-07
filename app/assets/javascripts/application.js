@@ -16,3 +16,19 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+window.onload = function(){
+  $.ajax({
+    url: "/ideas.json",
+    type: "GET",
+    dataType: "json"
+  }).done(function(data){
+    var templateText    = $("#ideasTemplate").html();
+    var ideasTemplate = _.template(templateText);
+
+    _(data.ideas).each(function(idea){
+      var parsedTemplate = ideasTemplate(idea);
+      $("#ideas-list").append(parsedTemplate);
+    });
+  });
+}

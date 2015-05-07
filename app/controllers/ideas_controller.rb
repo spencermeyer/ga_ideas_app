@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  # respond_to :html, :json
 
   # GET /ideas 
   # GET /ideas.json
@@ -10,6 +11,11 @@ class IdeasController < ApplicationController
       @ideas = @q.result(distinct: true)
     else
       @ideas = Idea.all
+    end
+    # respond_with @ideas
+    respond_to do |format|
+      format.html
+      format.json { render json: @ideas }
     end
   end
 
@@ -91,7 +97,7 @@ class IdeasController < ApplicationController
       params.require(:idea).permit(:user_id, :title, :genre, :brief, :description)
     end
     
-end
+  end
 
 
 
