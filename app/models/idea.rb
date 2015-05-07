@@ -8,7 +8,6 @@ class Idea < ActiveRecord::Base
   validates :genre, format: { with: /\A[a-zA-Z]+\z/,
     message: "only allows letters" }
   validates :brief, length: { maximum: 500 }
-  acts_as_commentable 
 
   def number_of_likes
     get_likes.size
@@ -17,6 +16,8 @@ class Idea < ActiveRecord::Base
   def number_of_votes
     get_upvotes.size
   end
+
+  acts_as_commentable 
 
 end
 

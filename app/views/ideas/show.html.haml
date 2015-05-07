@@ -14,6 +14,15 @@
 %p
   %strong Description:
   = @idea.description
+%p
+  %ul Media Image:
+  - for i in 0..@idea.media.length
+    = image_tag @idea.media[i].try(:content)
+  - i++
+
+= link_to "Add Media", new_idea_medium_path(@idea)
+  
+
 = render partial: 'comments/form', locals: { commentable: @idea }
 = render partial: 'comments/comment', collection: @comments, locals: { commentable: @idea }
 = link_to 'Edit', edit_idea_path(@idea)
