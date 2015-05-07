@@ -3,7 +3,7 @@
     %p#notice= notice
     %p
       %strong
-      = @idea.user.first_name.humanize
+      = link_to "#{@idea.user.first_name.humanize+' '+@idea.user.last_name.humanize}", @idea.user, class: "name"
     %p
       %strong Title:
       = @idea.title
@@ -36,10 +36,10 @@
   
 
   .likes
-    = link_to 'like idea', like_idea_path(@idea), method: :put, class: "button tiny"
+    = link_to 'like', like_idea_path(@idea), method: :put, class: "button tiny"
     = @idea.get_likes.size
 
-    = link_to 'dislike idea', dislike_idea_path(@idea), method: :put, class: "button tiny"
+    = link_to 'dislike', dislike_idea_path(@idea), method: :put, class: "button tiny"
     = @idea.get_dislikes.size
 
   .payment
@@ -58,4 +58,4 @@
           %br/
           = text_field_tag "", nil, data:{stripe: "exp-month"}, placeholder: "month"
           = text_field_tag "", nil, data:{stripe: "exp-year"}, placeholder: "year"
-          = submit_tag "Give 10£ to Idea", class: "button expand"
+          = submit_tag "Give 10£ to Idea", class: "button expand donate"
