@@ -1,29 +1,29 @@
+%div#headerhome
+  %h1.homeheader
+    GA Ideas Network
+  %h2.hometagline
+    This is a forum for submitting, registering, reviewing, and voting on new tech ideas.
 
-%h1
-  GA Ideas Network
-%h2
-  This is a forum for submitting, registering, reviewing, and voting on new tech ideas.
-%h3
-  Top three trending ideas:
+%div#main
+  %h3.homemain
+    Top three trending ideas:
 
-
-
-%ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
-  - @ideas.each do |idea|
-    %Li
-      %ul.ideas-homepage
-        %li
-          = link_to "#{idea.title}", idea
-          %br
-          = idea.brief
-          %br
-          = idea.user.first_name
-          %br
-          = idea.user.last_name
-          %br
-          = idea.brief
-          %br
-          = image_tag idea.media[0].try(:content)
+  %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
+    - @ideas.each do |idea|
+      %Li
+        %ul.ideas-homepage
+          %li
+            = link_to "#{idea.title}", idea
+            %br
+            = idea.brief
+            %br
+            = idea.user.first_name
+            %br
+            = idea.user.last_name
+            %br
+            = idea.brief
+            %br
+            = image_tag idea.media[0].try(:content)
 
 
 
