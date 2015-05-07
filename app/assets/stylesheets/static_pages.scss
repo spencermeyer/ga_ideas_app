@@ -8,5 +8,85 @@
   border: 1px solid black;
   text-align: center;
 }
+.titleentry{
+  width: 200px;
+  font-size: larger;
+}
+.genreentry{
+  width: 150px;
+}
+.briefentry{
+  width: 250px;
+  height: 100px;
+}
+.descriptionentry{
+width: 800px;
+}
+.firstnameentry{
+  width: 150px;
+  float: left;
+  padding: 0px 10px 0px 10px;
+}
+.lastnameentry{
+  width: 150px;
+  float: left;
+  padding: 0px 10px 0px 10px; 
+}
+.dobentry{
+ width: 150px; 
+ float: left;
+ padding: 0px 10px 0px 10px; 
+}
+.roleentry{
+  width: 200px;
+  padding: 0px 10px 0px 10px;
+  float: left;
+}
+.genderentry{
+  width: 200px;
+  padding: 0px 150px 0px 10px;
+  float: left;
+}
+.nationalityentry{
+  width: 200px;
+  padding: 0px 10px 0px 10px;
+  float: left;
+}
+.locationentry{
+  width: 510px; 
+  padding: 0px 150px 0px 10px;
+  float: left;
+}
+.emailentry{
+  width: 300px;
+  padding: 0px 10px 0px 10px;
+  float: left;
+}
+.passwordentry{
+  width: 250px;
+  padding: 0px 10px 0px 10px;
+  float: left;
+}
+.confirmpasswordentry{
+  width: 250px;
+  padding: 0px 10px 0px 10px;
+}
+.logemailentry{
+  width: 300px;
+}
+.logpasswordentry{
+  width: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 

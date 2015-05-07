@@ -78,7 +78,7 @@ class IdeasController < ApplicationController
   # POST /ideas
   # POST /ideas.json
   def create
-    @idea = Idea.new(idea_params)
+    @idea = current_user.ideas.new(idea_params)
 
     respond_to do |format|
       if @idea.save
