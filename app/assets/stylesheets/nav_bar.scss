@@ -1,0 +1,36 @@
+.top-bar {
+  .top-bar-section {
+    .right {
+      .has-dropdown {
+        a{
+          font-family: georgia;
+          font-style: bolder;
+          color: white;
+        }
+        .dropdown {
+          .item {
+            a{ 
+              font-family: georgia;
+              font-style: bolder;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .left {
+      .has-form {
+        .search-button {
+          font-family: georgia;
+          font-style: italic;          
+        }
+      }
+      .has-dropdown {
+        a{
+          font-family: georgia;
+          font-style: bolder;
+        }
+      }
+    }
+  }
+}
