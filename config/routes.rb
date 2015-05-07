@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  
   resources :users, only:[:index, :show]
   resources :ideas
   resources :ideas do
@@ -20,10 +21,9 @@ Rails.application.routes.draw do
   
   resources :media
 
+
   resources :ideas do
     resources :media
   end
 
-
-  resources :comments, only:[:create, :destroy]
 end

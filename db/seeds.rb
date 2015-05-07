@@ -23,6 +23,7 @@ User.destroy_all
 comment1 = Comment.create!(title: "fhfhfhffh") 
 #TITLE LENGTH FOR COMMENT VALIDATION TESTED SUCCESSFULLY
 
+
 user1 = User.create!(email: "c@c.com", password: "password", first_name: "Thomas", last_name: "Edison", dob: "25/01/1847", role: "user", gender: "m", nationality: "American", location: "Ohio")
 user2 = User.create!(email: "a@a.com", password: "password", first_name: "Albert", last_name: "Einstein", dob: "25/01/1889", role: "user", gender: "m", nationality: "German", location: "Berlin")
 user3 = User.create!(email: "b@b.com", password: "password", first_name: "Nikola", last_name: "Tesla", dob: "25/01/1856", role: "user", gender: "m", nationality: "American", location: "NewYork")
@@ -36,8 +37,8 @@ idea3 = Idea.create!(user_id: user3.id, title: "ToiletGolf", genre: "Gadgets", b
 #medium2 = Medium.create!(idea_id: idea2.id, title: "ButterStick", content: Rails.root.join("app/assets/images/butterstick.jpg").open, media_type: "image")
 #medium3 = Medium.create!(idea_id: idea3.id, title: "flyingsaucer", content: Rails.root.join("app/assets/images/toiletgolf.jpeg").open, media_type: "image")
 
+
 identity = Identity.create!(user_id: user1.id, provider: "facebook", uid: "danizraikat")
 comment2 = Comment.create!(user_id: user1.id, title: "aaaaaaaa") 
-
 
 

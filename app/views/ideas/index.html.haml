@@ -6,7 +6,7 @@
   %h4
     If you wish to help the idea come true why not donate to it.
   %h5
-    Or just leave a comment or like.
+    Or just leave a comment.
   %table
     %thead
       %tr
@@ -35,7 +35,7 @@
     %td
       :plain
         <a href="/ideas/<%= id %>">Show</a>  
-  - if can? :edit, @idea
+  -# - if can? :edit, @idea
     %td
       :plain
         <a href="/ideas/<%= id %>/edit">Edit</a>

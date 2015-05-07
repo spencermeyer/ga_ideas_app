@@ -1,0 +1,36 @@
+.top-bar {
+  .top-bar-section {
+    .right {
+      .has-dropdown {
+        a{
+          font-family: Georgia;
+          
+          color: white;
+        }
+        .dropdown {
+          .item {
+            a{ 
+              font-family: Georgia;
+              
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .left {
+      .has-form {
+        .search-button {
+          font-family: Georgia;
+          font-style: italic;          
+        }
+      }
+      .has-dropdown {
+        a{
+          font-family: Georgia
+          
+        }
+      }
+    }
+  }
+}
