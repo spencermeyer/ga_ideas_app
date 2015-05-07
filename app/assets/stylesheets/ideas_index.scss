@@ -1,17 +1,22 @@
 .ideas_index {
   height: 100%;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   text-align: center;
   background-color: rgba(255,255,255,0.4);
   padding: 50px;
   font-family: "Georgia";
+  p#notice {
+    font-size: 18px;
+    background-color: rgba(0,0,0,0.6);
+  }
   h1 {
   font-family: "Comic Sans MS";
   font-size: 40px;
   }
   table {
     margin: 0 auto;
+    margin-bottom: 50px;
     padding: 20px;
     border: 2px solid black;
     border-radius: 10px;
@@ -39,7 +44,7 @@
     }
   }
   .new-idea {
-    padding: 5px;
+    padding: 10px;
     background-color: rgba(0,0,0,0.5);
     font-size: 20px;
     color: white;
