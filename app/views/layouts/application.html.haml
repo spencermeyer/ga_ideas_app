@@ -15,8 +15,11 @@
     %nav.top-bar{"data-topbar" => "", :role => "navigation"}
       %ul.title-area
         %li.name
-          %h2= link_to "NETWORK", root_path
-          / <h1><img class="ga" src="http://cic.us/wp-content/uploads/2013/07/General-Assembly-logo.png"></h1>
+          %h1
+            = link_to image_tag('ga-mainlogo.png', class: "home"), '/'
+          %li.toggle-topbar.menu-icon
+            %a{:href => "#"}
+              %span Menu
           
         %li.toggle-topbar.menu-icon
           %a{:href => "#"}
