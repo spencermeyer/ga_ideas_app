@@ -25,6 +25,21 @@
 
 = render partial: 'comments/form', locals: { commentable: @idea }
 = render partial: 'comments/comment', collection: @comments, locals: { commentable: @idea }
+  
+- if can? :add, @idea
+  = link_to 'Edit', edit_idea_path(@idea)
+  |
+  \#{link_to 'Back', ideas_path}
+
+
+= link_to 'like idea', like_idea_path(@idea), method: :put, class: "button small"
+= @idea.get_likes.size
+
+
+= link_to 'dislike idea', dislike_idea_path(@idea), method: :put, class: "button small"
+= @idea.get_dislikes.size
+
 = link_to 'Edit', edit_idea_path(@idea)
-|
+
 = link_to 'Back', ideas_path
+

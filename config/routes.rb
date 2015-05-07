@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :media
   end
 
+
   resources :comments, only:[:create, :destroy]
 
 end
