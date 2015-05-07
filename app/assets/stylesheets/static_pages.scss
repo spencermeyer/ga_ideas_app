@@ -1,7 +1,37 @@
-.ideas-homepage{
-  max-width: 150px;
-  margin: 0auto;
-  list-style-type: none;
-  border: 1px solid black;
-  text-align: center;
+#fullpage {
+  width: 100%;
+
+  #headerhome {
+    
+    .homeheader {
+      font-family: Impact;
+      font-size: 100px;
+      text-align: center;
+    }
+    .hometagline {
+      text-align: center;
+      font-family: Georgia;
+      font-size: 30px;
+    }
+  }
+}
+
+#main {
+  width: 100%;
+  
+
+  #mainideas {
+    .homemain {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    .ideas-homepage {
+      max-width: 150px;
+      margin: auto;
+      list-style-type: none;
+      border: 1px solid black;
+      text-align: center;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-!!!
+!!!  
 %html
   %head
     %meta{:charset => "utf-8"}/
@@ -62,3 +62,4 @@
               %li.item= link_to 'New User', new_user_registration_path
 
     %main.row= yield
+    = yield :homepage_content
