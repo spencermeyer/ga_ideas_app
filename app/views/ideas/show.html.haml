@@ -1,62 +1,61 @@
-%p#notice= notice
-%p
-  %strong User:
-  = @idea.user_id
-%p
-  %strong Title:
-  = @idea.title
-%p
-  %strong Genre:
-  = @idea.genre
-%p
-  %strong Brief:
-  = @idea.brief
-%p
-  %strong Description:
-  = @idea.description
-%p
-  %ul Media Image:
-  - for i in 0..@idea.media.length
-    = image_tag @idea.media[i].try(:content)
-  - i++
+.ideas-show 
+  .ideas-info
+    %p#notice= notice
+    %p
+      %strong
+      = @idea.user.first_name.humanize
+    %p
+      %strong Title:
+      = @idea.title
+    %p
+      %strong Genre:
+      = @idea.genre
+    %p
+      %strong Brief:
+      = @idea.brief
+    %p
+      %strong Description:
+      = @idea.description
+    .links
+      -# - if can? :add, @idea
+      = link_to 'Edit', edit_idea_path(@idea)
+      |
+      \#{link_to 'Back', ideas_path}
 
-= link_to "Add Media", new_idea_medium_path(@idea)
+  %p
+    %strong
+    - for i in 0..@idea.media.length
+      = image_tag @idea.media[i].try(:content)
+    - i++
+
+  = link_to "Add Media", new_idea_medium_path(@idea), class: "button add-media"
+    
+  .comment
+    = render partial: 'comments/form', locals: { commentable: @idea }
+    = render partial: 'comments/comment', collection: @comments, locals: { commentable: @idea }
   
 
-= render partial: 'comments/form', locals: { commentable: @idea }
-= render partial: 'comments/comment', collection: @comments, locals: { commentable: @idea }
-  
-- if can? :add, @idea
-  = link_to 'Edit', edit_idea_path(@idea)
-  |
-  \#{link_to 'Back', ideas_path}
+  .likes
+    = link_to 'like idea', like_idea_path(@idea), method: :put, class: "button tiny"
+    = @idea.get_likes.size
 
+    = link_to 'dislike idea', dislike_idea_path(@idea), method: :put, class: "button tiny"
+    = @idea.get_dislikes.size
 
-= link_to 'like idea', like_idea_path(@idea), method: :put, class: "button small"
-= @idea.get_likes.size
-
-
-= link_to 'dislike idea', dislike_idea_path(@idea), method: :put, class: "button small"
-= @idea.get_dislikes.size
-
-= form_tag get_payment_idea_path , id: "payment-form" do
-  %span.payment-errors
-    .form-row
-      = label_tag :card_number
-      %br/
-      = text_field_tag "", nil, data:{stripe: "number"}
-    .form-row
-      = label_tag :cvc
-      %br/
-      = text_field_tag "", nil, data:{stripe: "cvc"}
-    .form-row
-      = label_tag :expiration
-      %br/
-      = text_field_tag "", nil, data:{stripe: "exp-month"}
-      \/
-      \#{text_field_tag "", nil, data:{stripe: "exp-year"}}
-      = submit_tag "Give 10£ to Idea", class: "button expand"
-
-= link_to 'Edit', edit_idea_path(@idea)
-
-= link_to 'Back', ideas_path
+  .payment
+    = form_tag get_payment_idea_path , id: "payment-form" do
+      %span.payment-errors
+        .form-row
+          = label_tag :card_number
+          %br/
+          = text_field_tag "", nil, data:{stripe: "number"}
+        .form-row
+          = label_tag :cvc
+          %br/
+          = text_field_tag "", nil, data:{stripe: "cvc"}
+        .form-row
+          = label_tag :expiration
+          %br/
+          = text_field_tag "", nil, data:{stripe: "exp-month"}, placeholder: "month"
+          = text_field_tag "", nil, data:{stripe: "exp-year"}, placeholder: "year"
+          = submit_tag "Give 10£ to Idea", class: "button expand"
