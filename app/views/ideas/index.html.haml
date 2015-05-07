@@ -1,17 +1,24 @@
-%p#notice= notice
-%h1 Listing Ideas
-%table
-  %thead
-    %tr
-      %th User
-      %th Title
-      %th Genre
-      %th Brief
-      %th Description
-      %th{:colspan => "3"}
-  %tbody#ideas-list
-%br/
-= link_to 'New Idea', new_idea_path
+.ideas_index
+  %p#notice= notice
+  %h1 Ideas
+  %h3
+    You can browse through the list of ideas currently up on our website.
+  %h4
+    If you wish to help the idea come true why not donate to it.
+  %h5
+    Or just leave a comment or like.
+  %table
+    %thead
+      %tr
+        %th User
+        %th Title
+        %th Genre
+        %th Brief
+        %th Description
+        %th{:colspan => "3"}
+    %tbody#ideas-list
+  %br/
+  = link_to 'New Idea', new_idea_path, class: "new-idea"
 
 %script{:type => 'text/template', id: "ideasTemplate"}
   %tr
