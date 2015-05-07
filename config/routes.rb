@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users, only:[:index, :show]
   resources :ideas
-
+  resources :ideas do
+    resources :media
+    member do 
+      post 'get_payment'
+    end
+  end
   resources :idea do
     member do
       put "like",    to:'ideas#upvote'
@@ -14,9 +19,5 @@ Rails.application.routes.draw do
   resources :comments, only:[:create, :destroy]
 
   resources :media
-
-  resources :ideas do
-    resources :media
-  end
 
 end
