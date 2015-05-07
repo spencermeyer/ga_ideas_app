@@ -30,9 +30,7 @@
 
 <!-- Stripe Form -->
 
-<!-- REPLACE FORM FOR RAILS FORM HELPER -->
-
-<%= form_tag get_payment_ideas_path , id: "payment-form" do |f| %>
+<%= form_tag get_payment_idea_path , id: "payment-form" %>
   <span class="payment-errors"></span>
 
   <div class="form-row">
@@ -47,14 +45,11 @@
 
   <div class="form-row">
     <%= label_tag :expiration %><br />
-    <%= text_field_tag "", nil, data:{stripe: "exp-month"} %>
+    <%= text_field_tag "", nil, data:{stripe: "exp-month"} %>/
     <%= text_field_tag "", nil, data:{stripe: "exp-year"} %>
   </div>
 
-  <%= submit_tag :pay %>
-
-<% end %>
-
+  <%= submit_tag :Endorse, class: "button expand" %>
 
 
 <!-- Stripe.js JQ functionality -->
@@ -83,7 +78,7 @@
     } else {
       // response contains id and card, which contains additional card details
       var token = response.id;
-      debugger
+
       // Insert the token into the form so it gets submitted to the server
       $form.append($('<input type="hidden" name="stripeToken" />').val(token));
       // and submit
