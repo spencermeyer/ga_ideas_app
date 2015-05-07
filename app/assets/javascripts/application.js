@@ -18,6 +18,8 @@
 $(function(){ $(document).foundation(); });
 
 window.onload = function(){
+
+  // IDEAS LOAD WITH UNDERSCORE JS
   $.ajax({
     url: "/ideas.json",
     type: "GET",
@@ -31,4 +33,8 @@ window.onload = function(){
       $("#ideas-list").append(parsedTemplate);
     });
   });
+
+
+  // STRIPE KEY
+  Stripe.setPublishableKey($('body').data('stripe'));
 }

@@ -5,12 +5,13 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title= content_for?(:title) ? yield(:title) : "GA-Ideas"
     %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js", :type => "text/javascript"}
+    %script{:src => "https://js.stripe.com/v2/", :type => "text/javascript"}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-  %body
+  %body{"data-stripe" => "#{ENV["STRIPE_API_KEY"]}"}
     %nav.top-bar{"data-topbar" => "", :role => "navigation"}
       %ul.title-area
         %li.name
@@ -51,12 +52,11 @@
           %li.has-dropdown
             = link_to "Ideas", ideas_path
             %ul.dropdown
-              - if can? :add, @idea
-                %li.item= link_to 'New Idea', new_idea_path
+              %li.item= link_to 'New Idea', new_idea_path
           %li.has-dropdown
+          - if can? :add, @user
             = link_to "Users", users_path
             %ul.dropdown
-              - if can? :add, @user
-                %li.item= link_to 'New User', new_user_registration_path
+              %li.item= link_to 'New User', new_user_registration_path
 
     %main.row= yield
