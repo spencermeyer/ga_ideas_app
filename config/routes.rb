@@ -12,12 +12,8 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only:[:create, :destroy]
-<<<<<<< HEAD
-=======
   
   resources :media
-
-  # , only:[:create, :edit, :show, :new, :update]
 
   resources :ideas do
     resources :media
@@ -25,5 +21,4 @@ Rails.application.routes.draw do
 
   resources :comments, only:[:create, :destroy]
 
->>>>>>> 4a9444dc97fbbe174e31dd6e24e86216a31d3936
 end
