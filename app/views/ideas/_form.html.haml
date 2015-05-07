@@ -7,23 +7,19 @@
       %ul
         - @idea.errors.full_messages.each do |message|
           %li= message
-  .field
-    = f.label :user_id
-    %br/
-    = f.number_field :user_id
-  .field
+  .field.titleentry
     = f.label :title
     %br/
     = f.text_field :title
-  .field
+  .field.genreentry
     = f.label :genre
     %br/
     = f.text_field :genre
-  .field
+  .field.briefentry
     = f.label :brief
     %br/
     = f.text_area :brief
-  .field
+  .field.descriptionentry
     = f.label :description
     %br/
     = f.text_area :description

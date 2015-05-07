@@ -1,46 +1,46 @@
 %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .field
+  .field.firstnameentry
     = f.label :first_name
     %br/
     = f.text_field :first_name, autofocus: true
-  .field
+  .field.lastnameentry
     = f.label :last_name
     %br/
     = f.text_field :last_name
-  .field
+  .field.dobentry
     = f.label :dob
     %br/
     = f.date_field :dob
-  .field
+  .field.roleentry
     = f.label :role
     %br/
     = f.text_field :role
-  .field
+  .field.genderentry
     = f.label :gender
     %br/
     = f.text_field :gender
-  .field
+  .field.nationalityentry
     = f.label :nationality
     %br/
     = f.text_field :nationality
-  .field
+  .field.locationentry
     = f.label :location
     %br/
     = f.text_field :location
-  .field
+  .field.emailentry
     = f.label :email
     %br/
     = f.text_field :email
-  .field
+  .field.passwordentry
     = f.label :password
     - if @validatable
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
     = f.password_field :password, autocomplete: "off"
-  .field
+  .field.confirmpasswordentry
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
