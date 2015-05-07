@@ -34,20 +34,21 @@ class IdeasController < ApplicationController
     # Get the credit card details submitted by the form
     token = params[:stripeToken]
 
+    # Create the customer on Stripe's servers
     customer = Stripe::Customer.create(
       :source => token,
       :description => "Example customer"
       )
 
-    # **** USED TO SAVE CUSTOMER AND ADD TO DATABASE AS CUSTOMER_ID ****
-    # # Create the charge on Stripe's servers - this will charge the user's card
-    #   Stripe::Charge.create(
-    #           :amount => 1000, # in cents
-    #           :currency => "gbp",
-    #           :customer => customer.id,
-    #           :description => "Endorsed Idea on GA-Network"
-    #           )
+    # Create the charge on Stripe's servers - this will charge the user's card
+      Stripe::Charge.create(
+              :amount => 1000, # in cents
+              :currency => "gbp",
+              :customer => customer.id,
+              :description => "Endorsed Idea on GA-Network"
+              )
 
+    # **** USED TO SAVE CUSTOMER AND ADD TO DATABASE AS CUSTOMER_ID ****
     # # Save the customer ID in your database so you can use it later
     # save_stripe_customer_id(@user, customer.id)
 
