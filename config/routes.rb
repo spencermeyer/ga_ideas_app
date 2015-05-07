@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   
   resources :users, only:[:index, :show]
   resources :ideas
-
+  resources :ideas do
+    resources :media
+    member do 
+      post 'get_payment'
+    end
+  end
   resources :idea do
     member do
       put "like",    to:'ideas#upvote'
@@ -12,14 +17,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :ideas do
-    resources :media
-  end
-
   resources :comments, only:[:create, :destroy]
   
   resources :media
 
-  # only:[:create, :edit, :show, :new, :update]
+
+  resources :ideas do
+    resources :media
+  end
 
 end

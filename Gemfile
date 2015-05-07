@@ -15,7 +15,7 @@ gem 'cancancan'
 gem 'ransack'
 gem 'active_model_serializers'
 gem 'html2haml'
-
+gem 'stripe'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
