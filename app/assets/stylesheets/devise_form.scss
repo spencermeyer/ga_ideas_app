@@ -1,0 +1,30 @@
+.devise-form {
+  .sign-up {
+    max-width: 65%;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.5);
+    input {
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.7);
+      background-color: rgba(255,255,255,0.6);
+    }
+    label{
+      color: white;
+      font-size: 14px;
+    }
+  }
+  .actions {
+    max-width: 65%;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.2);
+    .button {
+      border: 2px solid white;
+      border-radius: 5px;
+    }
+  }
+}

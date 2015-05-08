@@ -17,11 +17,8 @@
                 %li
                   = link_to "#{idea.title}", idea
                   %br
-                  = idea.brief
-                  %br
-                  = idea.user.first_name
-                  %br
-                  = idea.user.last_name
+                  Inventor: 
+                  = link_to "#{idea.user.first_name + " " + idea.user.last_name}", idea.user
                   %br
                   = idea.brief
                   %br

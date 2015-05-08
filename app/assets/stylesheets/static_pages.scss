@@ -2,19 +2,28 @@
   width: 100%;
 
   #headerhome {
-
+    margin-top: 50px;
     .homeheader {
+      max-width: 100%;
+      margin: 0 auto;
+      background-color: rgba(0,0,0,0.1);
+      border-radius: 5px;
       font-family: Impact;
-      font-size: 100px;
+      font-size: 120px;
+      color: rgb(20,20,20);
       text-align: center;
     }
     .hometagline {
+      margin-top: 15px;
+      margin-bottom: 20px;
       text-align: center;
       font-family: Georgia;
-      font-size: 30px;
+      font-size: 36px;
     }
+
   }
 }
+
 .titleentry{
   width: 200px;
   font-size: larger;
@@ -102,25 +111,48 @@
 
 #main {
   width: 100%;
-  
+  margin-bottom: 30px;
   #mainideas {
+    padding: 10px;
     .homemain {
       text-align: center;
       font-size: 40px;
-      
+      padding: 20px;
+      background-color: rgba(255,255,255,0.7) !important;
     }
     .ideas-homepage {
-      max-width: 150px;
+      max-width: 260px;
       margin: auto;
+      margin-top: 25px;
+      padding: 15px;
       list-style-type: none;
-      border: 1px solid black;
+      border: 3px solid rgba(255,255,255,0.8);
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 5px;
       text-align: center;
+      line-height: 30px;
+      color: white;
+        a {
+          color: black;
+          padding: 5px;
+          font-size: 16px;
+        }
+        a:hover {
+          color: red;
+          background-color: rgba(0,0,0,0.3);
+          border-radius: 3px;
+        }
+      img {
+        margin: 2px;
+        margin-top: 10px;
+        max-width: 200px;
+      }
     }
     .homemain{
-      background-color: rgba(255,255,255,0.3);   
-      margin-left: auto;
-      margin-right: auto;
-      width: 70%;
+      max-width: 960px;
+      margin: 0 auto;
+      background-color: rgba(255,255,255,0.3);
+      padding: 10px;
       padding: 0px 0px 0px 0px;
     }
   }
