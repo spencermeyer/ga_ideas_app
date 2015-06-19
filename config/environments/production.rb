@@ -22,7 +22,10 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  # config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+ # trying this to see if it works on heroku original is above this line
+ # 19/6/2015
+ config.serve_static_files = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
